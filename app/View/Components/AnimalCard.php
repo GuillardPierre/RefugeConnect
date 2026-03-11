@@ -8,6 +8,8 @@ use Illuminate\View\Component;
 
 class AnimalCard extends Component
 {
+    public $id;
+
     public $name;
 
     public $species;
@@ -19,8 +21,9 @@ class AnimalCard extends Component
     public $imageUrl;
 
 
-    public function __construct($name, $species, $age, $description, $imageUrl)
+    public function __construct($id, $name, $species, $age, $description, $imageUrl)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->species = $species;
         $this->age = $age;
