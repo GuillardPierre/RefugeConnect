@@ -10,4 +10,13 @@ class AnimalController extends Controller
     {
         return view('animal-detail', compact('animal'));
     }
+
+    public function edit ($id)
+    {
+        $animal = Animal::findOrFail($id);
+        $animal->name = $animal['name'] . " modifié";
+        $animal->save();
+
+        return redirect()->route('home');
+    }
 }
