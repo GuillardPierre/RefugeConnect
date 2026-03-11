@@ -1,4 +1,4 @@
-<header class="w-full py-8">
+<header class="w-1/2 mx-auto py-8">
     <nav class="navbar">
         <div class="container mx-auto flex items-center justify-between px-4">
             <img src="{{ asset('logo.png') }}" alt="RefugeConnect" class="logo h-16 w-auto">
