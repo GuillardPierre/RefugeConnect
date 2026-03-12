@@ -9,3 +9,7 @@ Route::get('/animals/{animal}', [AnimalController::class, 'show'])->name('animal
 Route::get('/animals/edit/{id}', [AnimalController::class, 'edit'])->name('animals.edit');
 Route::get('/animals/delete/{id}', [AnimalController::class, 'delete'])->name('animals.delete');
 Route::get('/animles/create', [AnimalController::class, 'create'])->name('animals.create');
+
+Route::fallback(function () {
+    return response()->view('errors.not-found');
+});
