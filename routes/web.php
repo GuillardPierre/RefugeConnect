@@ -5,10 +5,12 @@ use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/", [IndexController::class, "index"])->name("home");
-Route::get('/animals/{animal}', [AnimalController::class, 'show'])->name('animals.show');
-Route::get('/animals/edit/{id}', [AnimalController::class, 'edit'])->name('animals.edit');
-Route::get('/animals/delete/{id}', [AnimalController::class, 'delete'])->name('animals.delete');
-Route::get('/animles/create', [AnimalController::class, 'create'])->name('animals.create');
+Route::prefix("/animals")->controller(AnimalController::class)->group(function () {
+    Route::get('/{animal}', 'show')->name('animals.show');
+    Route::get('/edit/{id}', 'edit')->name('animals.edit');
+    Route::get('/delete/{id}', 'delete')->name('animals.delete');
+    Route::get('/create', 'create')->name('animals.create');
+});
 
 Route::fallback(function () {
     return response()->view('errors.not-found');
