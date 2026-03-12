@@ -1,0 +1,9 @@
+<header>
+    <nav>
+        <img src="{{ asset('logo.png') }}" alt="RefugeConnect">
+        <ul>
+            <li><a href="{{ route('home') }}">Accueil</a></li>
+            <li><a href="{{ route('animals.create') }}">Ajouter un animal</a></li>
+        </ul>
+    </nav>
+</header>

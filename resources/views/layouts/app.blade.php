@@ -11,10 +11,10 @@
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         </head>
     <body>
-        @include("layouts.header")
+        @include("partials.header")
         <main>
             @yield('content')
         </main>
-        @include("layouts.footer")
+        @include("partials.footer")
     </body>
 </html>

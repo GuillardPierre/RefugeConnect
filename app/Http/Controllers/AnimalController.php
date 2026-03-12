@@ -8,7 +8,7 @@ class AnimalController extends Controller
 {
     public function show(Animal $animal)
     {
-        return view('animal-detail', compact('animal'));
+        return view('pages.animal-detail', compact('animal'));
     }
 
     public function edit ($id)
