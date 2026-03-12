@@ -8,6 +8,6 @@
     <p>{{ $description }}</p>
     <div>
         <a href="{{ route('animals.edit', $id) }}">Modifier</a>
-        <a href="#">Supprimer</a>
+        <a href="{{ route('animals.delete', $id) }}">Supprimer</a>
     </div>
 </article>

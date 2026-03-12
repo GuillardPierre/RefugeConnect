@@ -19,4 +19,11 @@ class AnimalController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function delete($id) {
+        $animal = Animal::findOrFail($id);
+        $animal->delete();
+
+        return redirect()->route('home');
+    }
 }
